@@ -1,0 +1,41 @@
+<html>
+<head>
+<script src="https://unpkg.com/react@15/dist/react.min.js"> </script><script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js">
+</script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+	<div id="time"></div>
+    <script type="text/babel">
+    
+	/* Display Hello World */
+    class Hello extends React.Component {
+	render() {
+	return <h1>Hello World!</h1>
+		}
+	}
+	
+	ReactDOM.render(
+	<Hello />,
+	document.getElementById("root")
+	);
+    
+	/* clock function */
+	
+	function tick() {
+  const element = (
+    <div>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+	);
+	ReactDOM.render(
+    element,
+    document.getElementById('time')
+	);
+	}
+
+		setInterval(tick, 1000);
+    </script>
+</body>
+</html>
